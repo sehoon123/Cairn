@@ -194,6 +194,14 @@ uv run --project cairn cairn dispatch --config dispatch.yaml
 
 Local mode is selected by `runtime.execution: local` (see `dispatch.local.example.yaml`). On startup the dispatcher checks each configured worker CLI is installed and runnable, and reminds you they must already be logged in. Each project gets an isolated working directory under `local.workspace_root` (default: the dispatcher's current directory). Run the dispatcher directly on the host — not inside Docker — since the agents run with your user's permissions and no sandbox.
 
+### Web penetration testing prompt group
+
+Set `runtime.prompt_group: "webpentest"` in your existing dispatcher configuration
+to try the web assessment prompts. Use the same dispatch command and keep your
+current model, worker, bootstrap, and concurrency settings for an initial comparison.
+The `default` group remains available. See the [Korean setup and comparison guide](docs/webpentest.md)
+for activation, output conventions, runtime limitations, and switching back.
+
 ### Tests
 
 Run the fast regression suite without Docker or live model endpoints:
